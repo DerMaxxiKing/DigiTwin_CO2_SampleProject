@@ -1,0 +1,15 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: DigiTwin CO2 SampleProject
+message: >-
+  "If you use this software, please cite it as
+  below."
+type: software
+authors:
+  - email: maximilian.buehler@tuwien.ac.at
+    affiliation: TU Wien
+    orcid: 'https://orcid.org/0000-0002-4382-4267'
+    given-names: Maximilian
+    family-names: Bühler
