@@ -1,0 +1,60 @@
+- !Template:
+  template_name: DatabaseConnection
+  template_id: '1'
+  inherits_from: Database
+  content: [database_name, dialect, driver, host, password, port, user]
+  documentation:
+  units: {}
+  types: {database_name: str, dialect: str, driver: str, host: str, password: str,
+    port: int, user: str}
+  slots: {}
+  synonyms: {}
+  default_slot: Element
+- !Template:
+  template_name: Window
+  template_id: '2'
+  inherits_from: SimultanWindow
+  content: [c_ref, gap_width, gap_sensor_definition]
+  documentation: 'Template which defines a Window component'
+  units: {c_ref: 'm^0.5 / h * K^0.5', gap_width: 'm'}
+  types: {c_ref: float, gap_width: float}
+  slots: {gap_sensor_definition: Element 3}
+  synonyms: {}
+  default_slot: Element
+- !Template:
+  template_name: Zone
+  template_id: '3'
+  inherits_from: SimultanZone
+  content: [outside_air_temperature_sensor_definition, c_outside_sensor_definition,
+    room_air_temperature_sensor_definition, occupants_sensor_definition, c_inside_sensor_definition,
+    co2_emission_per_person]
+  documentation:
+  units: {}
+  types: {c_ref: float, max_gap_width: float, co2_emission_per_person: float}
+  slots: {outside_air_temperature_sensor_definition: Element 4, c_outside_sensor_definition: Element
+      3, occupants_sensor_definition: Element 2, c_inside_sensor_definition: Element
+      1, room_air_temperature_sensor_definition: Element 0}
+  synonyms: {}
+  default_slot: Element
+- !Template:
+  template_name: Sensor
+  template_id: '4'
+  inherits_from:
+  content: [db_id, measured_parameter, query, refresh_interval, database]
+  documentation:
+  units: {}
+  types: {id: float, measured_parameter: str, query: str, refresh_interval: float}
+  slots: {database: Element 0}
+  synonyms: {}
+  default_slot: Element
+- !Template:
+  template_name: CO2_Prediction_Definition
+  template_id: '5'
+  inherits_from: SimultanPredictionDefinition
+  content: [zones, prediction_interval, prediction_timesteps]
+  documentation:
+  units: {}
+  types: {prediction_interval: float, prediction_timesteps: float}
+  slots: {zones: Liste 0}
+  synonyms: {}
+  default_slot: Element
