@@ -9,6 +9,7 @@ from ..main import load_project
 from ..SimultanCO2Prediction.simultan_adaptions import get_sensor
 from .utils import sinus_value_fcn, static_value_fcn, random_range_value_fcn, sinus_int_value_fcn
 
+
 mpl.use('TkAgg')
 
 
@@ -37,16 +38,27 @@ def init_plot(sensors):
     return fig, axs, plots, value_lists
 
 
-def fake_measurement_data(project_file=None):
+def fake_measurement_data(project_file=None, username=None, password=None):
     parser = argparse.ArgumentParser(prog='fake_measurement_data',
                                      description='Programm which creates fake measurement data for sensors in a SIMULTAN project')
     parser.add_argument('-project', nargs='?', help='Absolute project path')
+    parser.add_argument('-username', nargs='?', help='Simultan Project User. Default is admin', const=1, type=str, default='admin')
+    parser.add_argument('-password', nargs='?', help='Simultan password. Default is admin', const=1, type=str, default='admin')
+
     args = parser.parse_args()
 
     if project_file is None:
         project_file = args.project
 
-    template_parser, data_model = load_project(project_file=project_file)
+    if username is None:
+        username = args.username
+
+    if password is None:
+        password = args.password
+
+    template_parser, data_model = load_project(project_file=project_file,
+                                               user_name=username,
+                                               password=password)
 
     typed_data = data_model.get_typed_data(template_parser=template_parser, create_all=True)
 

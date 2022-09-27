@@ -8,7 +8,7 @@ project_dir = Path(__file__).parent
 
 setuptools.setup(
     name="DigiTwin_CO2_SampleProject",
-    version="1",
+    version="2",
     description="Project which shows the use of the SIMULTAN data model and Python for digital twins",
     # Allow UTF-8 characters in README with encoding argument.
     long_description=project_dir.joinpath("README.rst").read_text(encoding="utf-8"),
