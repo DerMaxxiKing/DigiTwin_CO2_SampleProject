@@ -26,12 +26,28 @@ Install via pip:
 
 .. code-block::
 
+    pip install DigiTwin_CO2_SampleProject
+
+    or:
+
     pip install https://github.com/DerMaxxiKing/DigiTwin_CO2_SampleProject
+
+    Update:
+    pip install DigiTwin_CO2_SampleProject -U
 
 This installs the packages CO2_Prediction, MonitoringFaker and SimultanCO2Prediction
 
+If errors occur, try to update PySimultan:
+
+.. code-block::
+
+    pip install PySimultan -U
+
 Usage:
 ^^^^^^
+
+Download the Simultan Model from Github.
+Open your Simultan Project and adapt the paths to the databases.
 
 Run fake measurement generation:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -50,7 +66,7 @@ Run in cmd:
 
 .. code-block::
 
-    run_co2_prediction
+    run_co2_prediction -project <path_to_your_projcet> -username <username> -password <your_password>
 
 
 SIMULTAN model

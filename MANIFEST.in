@@ -3,5 +3,3 @@ include LICENSE.txt
 include requirements.txt
 recursive-exclude tests *
 graft src/DigiTwin_CO2_SampleProject/SimultanCO2Prediction/resources
-# graft src/py_plot_tools/basic_geometries/gui_adaptions/infos/generated
-# graft src/py_plot_tools/generated
